@@ -1,17 +1,23 @@
 function appendValue(value) {
-    document.getElementById('display').value += value;
+  document.getElementById('display').value += value;
+}
+
+function clearDisplay() {
+  document.getElementById('display').value = '';
+}
+
+function calculate() {
+  let expression = document.getElementById('display').value;
+
+  expression = expression.replace(/\^/g, '**');
+
+  // Replace `sqrt` with `Math.sqrt`
+  expression = expression.replace(/sqrt/g, 'Math.sqrt');
+
+  try {
+    const result = eval(expression);
+    document.getElementById('display').value = result;
+  } catch (error) {
+    document.getElementById('display').value = 'Error';
   }
-  
-  function clearDisplay() {
-    document.getElementById('display').value = '';
-  }
-  
-  function calculate() {
-    try {
-      const result = eval(document.getElementById('display').value);
-      document.getElementById('display').value = result;
-    } catch (error) {
-      document.getElementById('display').value = 'Error';
-    }
-  }
-  
+}
