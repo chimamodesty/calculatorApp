@@ -6,6 +6,19 @@ body {
   background-color: #1b1b1b;
 }
 
+.app-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.app-name {
+  font-size: 20px;
+  color: #fdf9f9;
+  margin-bottom: 10px;
+}
+
 .calculator {
   width: 300px;
   background-color: #fff;
@@ -43,4 +56,26 @@ button {
 
 button:active {
   background-color: #ccc;
+}
+
+
+/* Media Query for smaller screens */
+@media (max-width: 480px) {
+  .app-name {
+    font-size: 22px; 
+  }
+
+  .calculator {
+    width: 90%; 
+    padding: 15px; 
+  }
+
+  .keys button {
+    font-size: 16px; 
+    padding: 10px; 
+  }
+
+  #display {
+    font-size: 20px; 
+  }
 }
